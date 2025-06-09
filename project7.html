@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Clone</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            font-family: 'Roboto', sans-serif;
+           font-weight: 300;
+            line-height: 1.4;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+        }
+        .logo  img{
+            width: 150px;
+            height: auto;
+        }
+        .center-nav{
+            display: flex;
+        }
+       
+       .search{
+        display: flex;
+       }
+       .search input{
+        min-width:600px;
+        padding: 0px 15px;
+        border: 0.5px solid #ccc;
+       }
+       .search button{
+       
+        border: none;
+        padding: 7px 20px;
+        cursor: pointer;
+       }
+       .mic {
+        background-color: #e2e2e2;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        gap: 20px;
+    }
+       .mic img{
+       
+              width: 30px;
+              height: auto;
+       }
+       header {
+        position: sticky;
+        top: 0;
+        background: white;
+        z-index: 100;
+        padding: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .side-nav img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    
+       .side-nav{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        justify-content: center;
+        margin-right: 50PX;
+       }
+       .tags{
+        padding: 10px 20px;
+        display: flex; 
+        gap: 15px;
+        border-top: 1px solid #ccc;
+       }
+       .tag{
+        padding: 5px 15px;
+        border: 1px solid #ccc ;
+        border-radius: 20px;
+       }
+       .dark{
+        background-color: #000000;
+        color: #fff;
+       }
+       .light{
+        background-color: #f9f9f9;
+        color: #5e5d5d;
+       }
+       aside{
+        
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+       }
+       .container{
+        display: flex;
+       }
+       .side-icons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+       }
+       .side-icons svg{
+        width: 30px;
+     
+       }
+       .side-icons p{
+        font-size: 12px;
+        
+       }
+       .bars{
+        margin-top: 20px;
+       }
+       .main-container{
+        width: 100%;
+       }
+       main{
+        min-height: 100vh;
+        background-color: rgb(240, 238, 238);
+       }
+       .card{
+        overflow: scroll;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <aside>
+        
+        <div class="bars">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4 17.27v-1h16v1zm0-4.77v-1h16v1zm0-4.77v-1h16v1z"/></svg>
+        </div>
+        <div class="side-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10 20v-6h4v6h5v-8h3L12 3L2 12h3v8z"/></svg>
+            <p>Home</p>
+        </div>
+        <div class="side-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8s8 3.59 8 8s-3.59 8-8 8m-5.5-2.5l7.51-3.49L17.5 6.5L9.99 9.99zm5.5-6.6c.61 0 1.1.49 1.1 1.1s-.49 1.1-1.1 1.1s-1.1-.49-1.1-1.1s.49-1.1 1.1-1.1"/></svg>
+            <p>Explore</p>
+        </div>
+        <div class="side-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M4.616 21q-.691 0-1.153-.462T3 19.385v-8.77q0-.69.463-1.152T4.615 9h14.77q.69 0 1.152.463T21 10.616v8.769q0 .69-.463 1.153T19.385 21zm0-1h14.769q.23 0 .423-.192t.192-.424v-8.768q0-.231-.192-.424T19.385 10H4.615q-.23 0-.423.192T4 10.616v8.769q0 .23.192.423t.423.192m6.506-2.352l3.485-2.32q.186-.13.186-.328t-.186-.329l-3.485-2.319q-.212-.136-.416-.028q-.205.109-.205.351v4.65q0 .242.205.351t.416-.028M5 7.231q-.213 0-.357-.143T4.5 6.73t.143-.357T5 6.231h14q.214 0 .357.143t.143.357t-.143.357T19 7.23zm3-2.77q-.213 0-.357-.143T7.5 3.962t.143-.357T8 3.462h8q.214 0 .357.143t.143.357t-.143.356t-.357.144zM4 20V10z"/></svg>
+            <p>Subscriptions</p>
+        </div>
+        <div class="side-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m11.5 14.5l7-4.5l-7-4.5zM8 18q-.825 0-1.412-.587T6 16V4q0-.825.588-1.412T8 2h12q.825 0 1.413.588T22 4v12q0 .825-.587 1.413T20 18zm0-2h12V4H8zm-4 6q-.825 0-1.412-.587T2 20V6h2v14h14v2zM8 4v12z"/></svg>
+            <p>Library</p>
+        </div>
+      
+       </aside>
+       <div class="main-container">
+   <header>
+    <nav>
+        <div class="logo">
+            <img src="youtube-logo.png" alt="logo">
+        </div>
+        <div class="center-nav">
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m19.485 20.154l-6.262-6.262q-.75.639-1.725.989t-1.96.35q-2.402 0-4.066-1.663T3.808 9.503T5.47 5.436t4.064-1.667t4.068 1.664T15.268 9.5q0 1.042-.369 2.017t-.97 1.668l6.262 6.261zM9.539 14.23q1.99 0 3.36-1.37t1.37-3.361t-1.37-3.36t-3.36-1.37t-3.361 1.37t-1.37 3.36t1.37 3.36t3.36 1.37"/></svg>
+                </button>
+            </div>
+            <div class="mic">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none"><rect width="8" height="13" x="8" y="2" fill="currentColor" rx="4"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 11a7 7 0 1 0 14 0m-7 10v-2"/></g></svg>
+            </div>
+           
+        </div>
+        <div class="side-nav">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 12V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2zm0 0l4-4v8zm-7-3v3m0 3v-3m0 0h3m-3 0H7"/></svg>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"><path fill="currentColor" d="M14 21a2 2 0 1 1 0 4a2 2 0 0 1 0-4m9 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4M5 21a2 2 0 1 1 0 4a2 2 0 0 1 0-4m9-9a2 2 0 1 1 0 4a2 2 0 0 1 0-4m9 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4M5 12a2 2 0 1 1 0 4a2 2 0 0 1 0-4m9-9a2 2 0 1 1 0 4a2 2 0 0 1 0-4m9 0a2 2 0 1 1 0 4a2 2 0 0 1 0-4M5 3a2 2 0 1 1 0 4a2 2 0 0 1 0-4"/></svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10 21h4c0 1.1-.9 2-2 2s-2-.9-2-2m11-2v1H3v-1l2-2v-6c0-3.1 2-5.8 5-6.7V4c0-1.1.9-2 2-2s2 .9 2 2v.3c3 .9 5 3.6 5 6.7v6zm-4-8c0-2.8-2.2-5-5-5s-5 2.2-5 5v7h10z"/></svg>
+            <img src="avatar.png" alt="avatar">
+        </div>
+    </nav>
+    <div class="tags">
+        <div class="tag dark">All</div>
+        <div class="tag light">Mixes</div>
+        <div class="tag light">Crypto</div>
+        <div class="tag light">Html</div>
+        <div class="tag light">CSS</div>
+        <div class="tag light">Javascript</div>
+    </div>
+   </header>
+   <main>
+    <div class="main-container">
+<div class="card">
+    
+    <iframe width="400" height="300" src="https://www.youtube.com/embed/hKB-YGF14SY?si=q8fqvIMsg620qlFm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    <iframe width="400" height="300" src="https://www.youtube.com/embed/Edsxf_NBFrw?si=HkOu7zXOms09RD7K" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="400" height="300" src="https://www.youtube.com/embed/5i0_ADBSZ30?si=h8S3704h4s1cYDOU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="400" height="300" src="https://www.youtube.com/embed/n6d6UJpZLm8?si=_M_F8pXNmyGm4qLn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="400" height="300" src="https://www.youtube.com/embed/6XlvBpRl418?si=7vvj0SIlIQOxl8Ua" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="400" height="300" src="https://www.youtube.com/embed/u2xo7LwjYks?si=lfR1m1vNv185JyZg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="400" height="300" src="https://www.youtube.com/embed/wWDABxRGW6E?si=nv283-CGJRHcEdNz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="400" height="300" src="https://www.youtube.com/embed/itcba2c1FGI?si=sipTFHf-_cILRGj9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="400" height="300" src="https://www.youtube.com/embed/nvsz_HGpEfQ?si=o1ouT1cDGQjldTj0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    
+</div>
+    </div>
+
+</main>
+</div>
+</div>
+</body>
+</html>
